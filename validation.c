@@ -6,12 +6,11 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 11:38:45 by pviegas-          #+#    #+#             */
-/*   Updated: 2025/06/13 18:56:51 by pviegas-         ###   ########.fr       */
+/*   Updated: 2025/06/14 11:42:41 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
 
 long	parse_number(const char *str)
 {
@@ -24,7 +23,7 @@ long	parse_number(const char *str)
 	{
 		result = result * 10 + (*str++ - '0');
 		if (result > 2147483647)
-			return 0;
+			return (0);
 	}
 	if (*str != '\0')
 		return (0);

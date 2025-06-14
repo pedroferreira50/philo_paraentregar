@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 11:36:55 by pviegas-          #+#    #+#             */
-/*   Updated: 2025/06/13 11:53:02 by pviegas-         ###   ########.fr       */
+/*   Updated: 2025/06/14 11:46:10 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,33 +38,21 @@ static int	take_second_fork(t_philo *philo)
 	{
 		pthread_mutex_lock(philo->left_fork);
 		if (is_simulation_ended(philo))
-		{
-			pthread_mutex_unlock(philo->left_fork);
-			pthread_mutex_unlock(philo->right_fork);
-			return (0);
-		}
+			return (philo_drop_forks(philo));
 		print_action("has taken a fork", philo);
 	}
 	else if (philo->id % 2 == 0)
 	{
 		pthread_mutex_lock(philo->left_fork);
 		if (is_simulation_ended(philo))
-		{
-			pthread_mutex_unlock(philo->left_fork);
-			pthread_mutex_unlock(philo->right_fork);
-			return (0);
-		}
+			return (philo_drop_forks(philo));
 		print_action("has taken a fork", philo);
 	}
 	else
 	{
 		pthread_mutex_lock(philo->right_fork);
 		if (is_simulation_ended(philo))
-		{
-			pthread_mutex_unlock(philo->right_fork);
-			pthread_mutex_unlock(philo->left_fork);
-			return (0);
-		}
+			return (philo_drop_forks(philo));
 		print_action("has taken a fork", philo);
 	}
 	return (1);
@@ -79,8 +67,9 @@ int	philo_take_forks(t_philo *philo)
 	return (1);
 }
 
-void	philo_drop_forks(t_philo *philo)
+int	philo_drop_forks(t_philo *philo)
 {
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 11:43:42 by pviegas-          #+#    #+#             */
-/*   Updated: 2025/06/13 11:49:33 by pviegas-         ###   ########.fr       */
+/*   Updated: 2025/06/14 11:46:39 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	philo_eat(t_philo *philo);
 void	philo_sleep(t_philo *philo);
 void	philo_think(t_philo *philo);
 int		philo_take_forks(t_philo *philo);
-void	philo_drop_forks(t_philo *philo);
+int		philo_drop_forks(t_philo *philo);
 
 // Thread management
 void	*philo_routine(void *arg);

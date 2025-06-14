@@ -6,7 +6,7 @@
 /*   By: pviegas- <pviegas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 11:38:55 by pviegas-          #+#    #+#             */
-/*   Updated: 2025/06/13 16:12:54 by pviegas-         ###   ########.fr       */
+/*   Updated: 2025/06/14 11:42:09 by pviegas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	should_continue_eating(t_philo *philo)
 	return (0);
 }
 
-void pre_routine(t_philo *philo)
+void	pre_routine(t_philo *philo)
 {
 	if (philo->sim->philo_count % 2 == 0)
 	{
